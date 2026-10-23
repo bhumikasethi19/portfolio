@@ -103,25 +103,24 @@ a { color: inherit; }
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
 .brand { font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; text-decoration: none;  white-space: nowrap; }
-@media (max-width: 380px) { .brand { font-size: 1rem; } .nav .wrap { gap: 10px; } .st-txt small { font-size: 0.55rem; } }
+@media (max-width: 380px) { .brand { font-size: 1rem; } .nav .wrap { gap: 10px; } .st-txt .st-mail { font-size: 0.55rem; } }
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { font-size: 0.88rem; text-decoration: none; color: var(--muted); }
 .nav-links a:hover { color: var(--ink); }
 @media (max-width: 760px) { .nav-links { display: none; } }
 .status {
   display: inline-flex; align-items: center; gap: 10px; font-size: 0.8rem;
-  padding: 6px 14px 6px 12px; border: 1px solid var(--rule); border-radius: 14px; white-space: nowrap;
-  text-decoration: none; color: var(--ink); transition: border-color .2s, background .2s;
+  padding: 6px 0; white-space: nowrap; color: var(--ink);
 }
-.status:hover { border-color: var(--turmeric); background: color-mix(in srgb, var(--turmeric-soft) 40%, transparent); }
 .status i { position: relative; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--turmeric); animation: stdot 2.4s ease-in-out infinite; }
 .status i::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--turmeric); animation: stping 2.4s cubic-bezier(0,0,.2,1) infinite; }
 .st-txt { display: flex; flex-direction: column; line-height: 1.2; }
 .st-txt b { font-weight: 500; }
-.st-txt small { font-family: var(--f-mono); font-size: 0.64rem; color: var(--muted); letter-spacing: 0.01em; }
+.st-txt .st-mail { font-family: var(--f-mono); font-size: 0.64rem; color: var(--muted); letter-spacing: 0.01em; text-decoration: none; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.st-txt .st-mail:hover, .st-txt .st-mail:focus-visible { color: var(--ink); border-bottom-color: var(--turmeric); }
 @keyframes stping { 0% { transform: scale(1); opacity: .65; } 70%, 100% { transform: scale(3.2); opacity: 0; } }
 @keyframes stdot { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
-@media (max-width: 420px) { .status { padding: 5px 10px; gap: 8px; } .st-txt b { font-size: 0.74rem; } .st-txt small { font-size: 0.58rem; } }
+@media (max-width: 420px) { .status { padding: 5px 0; gap: 8px; } .st-txt b { font-size: 0.74rem; } .st-txt .st-mail { font-size: 0.58rem; } }
 @media (prefers-reduced-motion: reduce) { .status i, .status i::after { animation: none; } }
 
 /* HERO */
@@ -1460,7 +1459,7 @@ a.val { color: inherit; text-decoration: none; } a.val:hover { text-decoration: 
       <a href="#timeline">Experience</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="status" href="mailto:bhumika.sethi1910@gmail.com"><i></i><span class="st-txt"><b>Open to new opportunities</b><small>bhumika.sethi1910@gmail.com</small></span></a>
+    <div class="status"><i></i><span class="st-txt"><b>Open to new opportunities</b><a class="st-mail" href="mailto:bhumika.sethi1910@gmail.com">bhumika.sethi1910@gmail.com</a></span></div>
   </div>
 </nav>
 
